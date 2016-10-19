@@ -10,6 +10,11 @@ import android.widget.LinearLayout;
  * Created by caojin on 2016/10/18.
  */
 
+/**
+ * you only need to configure two attrs:
+ * direction: the alignment, can either be left, right, top, bottom
+ * isIn: a boolean value that tells whether the {@link SlideMenuView} will show to the user
+ */
 public class SlideMenuView extends LinearLayout{
     // 滑入滑出方向
     public static final int DIRECTION_LEFT = 0;
