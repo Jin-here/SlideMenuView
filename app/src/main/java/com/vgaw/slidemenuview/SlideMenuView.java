@@ -61,20 +61,26 @@ public class SlideMenuView extends LinearLayout{
         }
     }
 
+    // 方案一
     public void slide(){
         // 始终为正数
+        float distance;
         switch (direction){
             case DIRECTION_TOP:
-                animate().y(isIn ? (topMargin + mHeight) : -(bottomMargin + mHeight)).setInterpolator(new OvershootInterpolator()).start();
+                distance = topMargin + mHeight;
+                animate().yBy(isIn ? distance : -distance).setInterpolator(new OvershootInterpolator()).start();
                 break;
             case DIRECTION_BOTTOM:
-                animate().y(isIn ? (DensityUtil.getScreenHeight(getContext()) - (mHeight + bottomMargin)) : (DensityUtil.getScreenHeight(getContext()) + topMargin)).setInterpolator(new OvershootInterpolator()).start();
+                distance = bottomMargin + mHeight;
+                animate().yBy(isIn ? -distance : distance).setInterpolator(new OvershootInterpolator()).start();
                 break;
             case DIRECTION_LEFT:
-                animate().x(isIn ? (leftMargin + mWidth) : -(rightMargin + mWidth)).setInterpolator(new OvershootInterpolator()).start();
+                distance = leftMargin + mWidth;
+                animate().xBy(isIn ? distance : -distance).setInterpolator(new OvershootInterpolator()).start();
                 break;
             case DIRECTION_RIGHT:
-                animate().x(isIn ? (DensityUtil.getScreenWidth(getContext()) - (mWidth + rightMargin)) : (DensityUtil.getScreenWidth(getContext()) + leftMargin)).setInterpolator(new OvershootInterpolator()).start();
+                distance = rightMargin + mWidth;
+                animate().xBy(isIn ? -distance : distance).setInterpolator(new OvershootInterpolator()).start();
                 break;
         }
         isIn = !isIn;
