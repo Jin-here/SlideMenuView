@@ -21,7 +21,8 @@
         android:orientation="vertical"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        app:direction="left">
+        app:direction="right"
+        app:isShow="true">
 
         <TextView
             android:layout_width="wrap_content"
